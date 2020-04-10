@@ -22,7 +22,7 @@ void vectorReverse(vector <int>& v) {
 vector<int> ans{};
 vector<int> visited{};
 
-void dfs(const int& u, const vector< vector<int> >& g) {
+void dfs(int u, const vector< vector<int> >& g) {
 	visited[u] = true;
 	for (int v = 0; v < g.size(); v++)
 		if (g[u][v] != -INF) {
