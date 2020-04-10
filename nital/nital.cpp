@@ -34,7 +34,7 @@ void vectorReverse(vector <int>& v) {
         swap(v[i], v[v.size() - 1 - i]);
 }
 
-void pushChar(vector<char>& vector, const string& word)    {
+void pushChar(vector<char>& vector, string word)    {
     for (size_t k = 0; k < word.length(); ++k)  {
         char ch = word[k];
         bool flag = false;
@@ -90,7 +90,7 @@ void matrixFilling(vector <vector <int> >& g, const vector<char>& alph,
 
 vector<string> color;
 
-bool dfsCycle(const int& v, const vector <vector <int> >& g)  {
+bool dfsCycle(int v, const vector <vector <int> >& g)  {
     color[v] = "grey";
     for (size_t u = 0; u < g.size(); ++u)   {
         if ((g[v][u] == 1)) {
@@ -106,7 +106,7 @@ bool dfsCycle(const int& v, const vector <vector <int> >& g)  {
 vector<int> ans{};    
 vector<int> visited{};
 
-void dfs(const int& u, const vector <vector <int> >& g) {
+void dfs(int u, const vector <vector <int> >& g) {
     visited[u] = true;
     for (size_t v = 0; v < g.size(); ++v)   {
         if (g[u][v] == 1)   {
