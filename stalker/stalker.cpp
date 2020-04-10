@@ -25,7 +25,7 @@ struct Edge {
 };
 
 
-void pushEdges(vector<Edge>& maps, Edge edge, int* ri, const int& i,const int& k)   {
+void pushEdges(vector<Edge>& maps, Edge edge, int* ri, int i, int k)   {
     for (size_t i = 0; (i < maps.size()) && (edge == maps[i]); ++i)
         return;
     maps.push_back(edge);
@@ -34,7 +34,7 @@ void pushEdges(vector<Edge>& maps, Edge edge, int* ri, const int& i,const int& k
 }
 
 
-void matrixFilling(vector <vector < Edge >>& maps, const int& k, int& m, int* ri)   {
+void matrixFilling(vector <vector < Edge >>& maps, int k, int& m, int* ri)   {
     for (int i = 0; i < k; ++i) {
         int j;                     
         cin >> j;
@@ -54,8 +54,8 @@ void matrixFilling(vector <vector < Edge >>& maps, const int& k, int& m, int* ri
 
 deque <int> deq{};
 
-int bfs(int** g, int* rv, const int& source, const int& destination,
-    const int& nkPlusM, const int& k)   {
+int bfs(int** g, int* rv, int source, int destination,
+    int nkPlusM, int k)   {
 
     vector <unsigned short> d(nkPlusM);
     //distance from source to i
