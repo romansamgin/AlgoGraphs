@@ -9,11 +9,12 @@ using namespace std;
 struct Edge {
     unsigned short x, y;
 
-    Edge() { this->x = -1;   this->y = -1; }
+    Edge() : x(-1), y(-1) 
+    {
+    }
         
-    Edge(const int& x, const int& y){
-        this->x = x;
-        this->y = y;
+    Edge(int x, int y) : x(x), y(y)
+    {
     }
 
     ~Edge() {}
