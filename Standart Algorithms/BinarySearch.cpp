@@ -3,6 +3,7 @@
 #include <iostream>
 #include <vector>
 
+using namespace std;
 
 int get_pos(const std::vector<int> &numbers, int number) {
   int l = 0, r = numbers.size() - 1;  
@@ -18,20 +19,22 @@ int get_pos(const std::vector<int> &numbers, int number) {
     return - 1;
 }
 
-int main(void) {
+int main(int argc, char* argv[]) {
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
   size_t number_count;
-  std::cin >> number_count;
-  std::vector<int> numbers(number_count);
+  cin >> number_count;
+  vector<int> numbers(number_count);
   for (size_t i = 0; i < number_count; i++) {
-    std::cin >> numbers[i];
+    cin >> numbers[i];
   }
 
   size_t query_count;
-  std::cin >> query_count;
+  cin >> query_count;
   while (query_count-- > 0) {
     int number;
-    std::cin >> number;
-    std::cout << get_pos(numbers, number) << " ";
+    cin >> number;
+    cout << get_pos(numbers, number) << ' ';
   }
-  std::cout << std::endl;
+  cout << '\n';
 }
