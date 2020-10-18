@@ -21,6 +21,8 @@ string HuffmanDecode(
 }
 
 int main(int argc, char* argv[]) {  
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
     int k, l;
     cin>>k>>l;
     unordered_map<string, string> mp;
