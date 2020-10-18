@@ -92,6 +92,8 @@ private:
 };
 
 int main(int argc, char* argv[]) {  
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
     Heap<int, HeapType::MAX> heap;
     int n;
     cin >> n;
