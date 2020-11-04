@@ -275,6 +275,7 @@ public:
 
     BST(int key) { 
         head = new Node(key); 
+        N = 1;
     }
 
 
