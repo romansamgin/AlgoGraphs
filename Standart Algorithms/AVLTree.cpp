@@ -336,6 +336,7 @@ long long f(long long x, long long s) {
 
 int main() {
     ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
     BST tr;
     int n;
     cin >> n;
