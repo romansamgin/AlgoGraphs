@@ -273,7 +273,7 @@ public:
 
     BST() : head(nullptr) {}
 
-    BST(long long key) { 
+    BST(int key) { 
         head = new Node(key); 
     }
 
