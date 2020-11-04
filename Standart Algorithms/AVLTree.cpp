@@ -279,7 +279,7 @@ public:
     }
 
 
-    Node* get_root() {
+    Node* get_root() const {
         return head;
     }
 
@@ -311,7 +311,7 @@ public:
     }
    
 
-    long long sum(int l, int r) {
+    long long sum(int l, int r) const {
         long long res = 0;
         Node* lca = LCA(l, r);
         if (!lca) {
