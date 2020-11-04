@@ -5,6 +5,8 @@
 
 using namespace std;
 
+//СТАРОЕ РЕШЕНИЕ
+//ЛУЧШЕ ИЗБАВИТЬСЯ ОТ NEW/DEL И МОЖНО УСКОРИТЬ
 
 struct Edge {
     unsigned short x, y;
