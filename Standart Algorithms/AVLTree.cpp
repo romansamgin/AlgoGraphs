@@ -330,7 +330,7 @@ public:
 };
 
 
-long long f(long long x, long long s) {
+int f(int x, long long s) {
     return (x + s) % 1'000'000'001;
 }
 
