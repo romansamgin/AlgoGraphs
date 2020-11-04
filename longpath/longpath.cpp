@@ -73,7 +73,7 @@ int main() {
 		for (int j = 0; j < n; ++j)
 			g[i][j] != -INF ? g[i][j] += cost[j] : g[i][j] = 0;
 
-	for (auto v : g)
+	for (auto& v : g)
 		print(v);
 
 	return 0;
