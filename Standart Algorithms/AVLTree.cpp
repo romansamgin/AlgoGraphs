@@ -352,11 +352,11 @@ int main() {
             l = f(l, s);
             r = f(r, s);
             if (l > r) {
-                cout << 0 << endl;
+                cout << 0 << '\n';
                 continue;
             }
             s = tr.sum(l, r);
-            cout << s << endl;
+            cout << s << '\n';
         }
         else {
             cin >> key;
@@ -370,10 +370,10 @@ int main() {
             else if (query == "?") {
                 auto ptr = tr.find(key);
                 if (ptr != nullptr) {
-                    cout << "Found" << endl;
+                    cout << "Found\n";
                 }
                 else {
-                    cout << "Not found" << endl;
+                    cout << "Not found\n";
                 }
             }   
         }
