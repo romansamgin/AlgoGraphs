@@ -6,25 +6,27 @@
 
 using namespace std;
 
+//РњРћР–РќРћ Р‘Р«РЎРўР Р•Р•
+
 void get_graph(vector<vector<pair<int, int>>>& graph, vector<int>& a, int& sum_ei) {
-	//n + 1 - я  вершина - это башня, n - фиктивная вершина, pair = пропускная способность, поток
+	//n + 1 - Гї  ГўГҐГ°ГёГЁГ­Г  - ГЅГІГ® ГЎГ ГёГ­Гї, n - ГґГЁГЄГІГЁГўГ­Г Гї ГўГҐГ°ГёГЁГ­Г , pair = ГЇГ°Г®ГЇГіГ±ГЄГ­Г Гї Г±ГЇГ®Г±Г®ГЎГ­Г®Г±ГІГј, ГЇГ®ГІГ®ГЄ
 	for (size_t i = 0; i < graph.size(); ++i) {
 		for (size_t j = 0; j < graph.size(); ++j) {
 			graph[i][j] = make_pair(0, 0);
 		}		
 	}
 
-	int e_i, to_tower, ai;				//Гендальф
+	int e_i, to_tower, ai;				//ГѓГҐГ­Г¤Г Г«ГјГґ
 	cin >> e_i >> to_tower >> ai;
 	a[0] = ai;
-	for (size_t i = 1; i < graph.size() - 2; ++i) {		//Маги
+	for (size_t i = 1; i < graph.size() - 2; ++i) {		//ГЊГ ГЈГЁ
 		int e_i, to_tower, ai;
 		cin >> e_i >> to_tower >> ai;
 		sum_ei += e_i;
-		graph[i][graph.size() - 2] = make_pair(e_i, 0);			//по фиктивной вершине
+		graph[i][graph.size() - 2] = make_pair(e_i, 0);			//ГЇГ® ГґГЁГЄГІГЁГўГ­Г®Г© ГўГҐГ°ГёГЁГ­ГҐ
 
 		if (to_tower) {
-			graph[i][graph.size() - 2 + 1] = make_pair(INF, 0);		//по башне
+			graph[i][graph.size() - 2 + 1] = make_pair(INF, 0);		//ГЇГ® ГЎГ ГёГ­ГҐ
 		}
 		a[i] = ai;
 	}
