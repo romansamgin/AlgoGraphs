@@ -133,12 +133,10 @@ private:
         while (cur != nullptr) {
             if (key < cur->key) {               
                 parrent = cur;
-
                 if (cur->right) {
                     sum += cur->right->sum;
                 }
                 sum += cur->key;
-
                 cur = cur->left;
             }
             else if (key > cur->key) {   
