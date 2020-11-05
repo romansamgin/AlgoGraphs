@@ -1,5 +1,4 @@
 # Algorithms
-standard algorithms
 
 Решение задач спецкурса "Алгоритмы на графах" - 3 курс мехмат пми на http://ejudge.mmcs.sfedu.ru/
 
