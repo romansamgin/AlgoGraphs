@@ -6,7 +6,7 @@
 using namespace std;
 
 //СТАРОЕ РЕШЕНИЕ
-//ЛУЧШЕ ИЗБАВИТЬСЯ ОТ NEW/DEL И МОЖНО УСКОРИТЬ
+//ЛУЧШЕ ИЗБАВИТЬСЯ ОТ NEW/DEL, Т.К МОГУТ БЫТЬ УТЕЧКИ + МОЖНО УСКОРИТЬ
 
 struct Edge {
     unsigned short x, y;
