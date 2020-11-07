@@ -5,12 +5,10 @@
 
 using namespace std;
 
-
 struct CharInfo {
     char ch;
     size_t indx;
 };
-
 
 //индексация с единицы 0 -> 1
 int CheckBrackets(const string& s, 
