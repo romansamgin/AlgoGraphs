@@ -4,8 +4,7 @@
 
 using namespace std;
 
-//acmp.ru task 396
-
+//https://acmp.ru/index.asp?main=task&id_task=396
 
 int Partition(vector<int>& arr, int l, int r){
     swap(arr[l], arr[(l + r) / 2]);
@@ -35,7 +34,6 @@ void QuickSort(vector<int>& arr, int l, int r){
         QuickSort(arr, m + 1, r);
     }
 }
-
 
 
 int lefts(const vector<int>& arr, int k){
@@ -111,6 +109,5 @@ int main(int argc, char* argv[]) {
         cout<<lefts(begins, p) - rights(ends,p) <<' ';
     }
     
-
     return 0;
 }
