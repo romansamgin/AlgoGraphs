@@ -19,7 +19,7 @@ string Huffman(const string& s){
     if (counter.size() == 1){
         cout<<1<<" "<<s.size()<<endl;
         cout<<s[0]<<": "<<0<<endl;
-        for(auto ch : s){
+        for(char ch : s){
             cout<<0;
         }
         return "";
