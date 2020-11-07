@@ -2,11 +2,9 @@
 #include <vector>
 #include <algorithm>
 
-
 using namespace std;
 
 const int INF = numeric_limits<int>::max();
-
 
 //Невозр
 vector<int> LIS(const vector<int>& a){
