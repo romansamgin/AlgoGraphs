@@ -1,10 +1,10 @@
+//https://acmp.ru/index.asp?main=task&id_task=396
+
 #include <iostream>
 #include <vector>
 #include <algorithm>
 
 using namespace std;
-
-//https://acmp.ru/index.asp?main=task&id_task=396
 
 int Partition(vector<int>& arr, int l, int r){
     swap(arr[l], arr[(l + r) / 2]);
