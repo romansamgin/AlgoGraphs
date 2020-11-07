@@ -7,16 +7,10 @@ using namespace std;
 struct Edge {
 	int x, y, w;
 
-	Edge() {
-		this->x = 0;
-		this->y = 0;
-		this->w = 0;
-	}
+	Edge() = default;
 
-	Edge(int _x, int _y, int _w) { 
-		this->x = _x; 
-		this->y = _y; 
-		this->w = _w;
+	Edge(int _x, int _y, int _w) : x(x_), y(y_), w(w_)	
+	{ 
 	}
 
 	void print() {	
