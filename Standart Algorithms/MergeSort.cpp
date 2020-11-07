@@ -5,7 +5,6 @@
 
 using namespace std;
 
-
 long long Merge(vector<int>& arr, 
                 const vector<int>& left, 
                 const vector<int>& right)
@@ -34,8 +33,6 @@ long long Merge(vector<int>& arr,
     return count;
 }
 
-
-
 long long MergeSort(vector<int>& arr){
     if (arr.size() < 2){
         return 0;
@@ -52,13 +49,12 @@ int main(int argc, char* argv[]) {
     cin>>n;
     vector<int> arr;
     arr.reserve(n);
-
     int x;
     for(int i = 0; i < n; ++i){ 
         cin>>x;
         arr.emplace_back(x);
-    }  
-    
+    }    
     cout<<MergeSort(arr)<<'\n';
+  
     return 0;
 }
