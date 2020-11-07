@@ -2,14 +2,14 @@
 #include <vector>
 #include <queue>
 
-
-#define INF 1000000
-
 using namespace std;
+const int INF = 1000000;
 
-
-void get_data(vector<vector<pair<int, int >>> &graph,
-	vector<int>& destinations, int m) {
+void get_data(
+	vector<vector<pair<int, int >>> &graph,
+	vector<int>& destinations, const int m
+	) {
+	
 	for (int i = 0; i < destinations.size(); ++i) {
 		cin >> destinations[i];
 	}
@@ -21,11 +21,12 @@ void get_data(vector<vector<pair<int, int >>> &graph,
 	}
 }
 
-vector<int> dijkstra(const vector<vector<pair<int, int>>>& graph, const int source) {
-
+vector<int> dijkstra(const vector<vector<pair<int, int>>>& graph, 
+		     const int src) {
+	
 	vector<int>d(graph.size(), INF);
 	vector<bool>used(graph.size(), false);
-	d[source] = 0;
+	d[src] = 0;
 	for (int i = 0; i < graph.size(); ++i) {
 		int v = -1;
 		for (int j = 0; j < graph.size(); ++j) {
@@ -43,11 +44,14 @@ vector<int> dijkstra(const vector<vector<pair<int, int>>>& graph, const int sour
 			}
 		}
 	}
+	
 	return d;
 }
 
-vector<vector<int>> get_parents_graph(const vector<vector<pair<int, int>>>& graph, 
-	const vector<int>& shortest) {
+vector<vector<int>> get_parents_graph(
+	const vector<vector<pair<int, int>>>& graph, 
+	const vector<int>& shortest
+	) {
 
 	vector<vector<int>>parents_graph(graph.size());
 	for (int u = 0; u < graph.size(); ++u) {
@@ -57,11 +61,14 @@ vector<vector<int>> get_parents_graph(const vector<vector<pair<int, int>>>& grap
 			}
 		}
 	}
+	
 	return parents_graph;
 }
 
-void bfs(const vector<vector<int>>& parents_graph, int src, int point,
-	vector<int>& checkpoints) {
+void bfs(const vector<vector<int>>& parents_graph, 
+	 const int src, const int point,
+	 vector<int>& checkpoints) {
+	
 	if (checkpoints[src] == point - 1) {
 		checkpoints[src] = point;
 	}	
@@ -81,7 +88,11 @@ void bfs(const vector<vector<int>>& parents_graph, int src, int point,
 	}
 }
 
-int find_max_parent(const vector<int>& checkpoints, const vector<int>& shortest, int k) {
+int find_max_parent(
+	const vector<int>& checkpoints, 
+	const vector<int>& shortest, const int k
+	) {
+	
 	int max = 0;
 	for (int i = 0; i < checkpoints.size(); i++)
 		if (checkpoints[i] == k - 1) {
@@ -89,11 +100,11 @@ int find_max_parent(const vector<int>& checkpoints, const vector<int>& shortest,
 				max = shortest[i];
 			}
 		}
+		
 	return max;
 }
 
-int main()
-{
+int main()	{
 	int n, m, k;
 	cin >> n >> m >> k;
 	vector<vector<pair<int, int >>>graph(n);
@@ -111,7 +122,7 @@ int main()
 	for (int i = 0; i < destinations.size(); ++i) {
 		bfs(parents_graph, destinations[i], i, checkpoints);
 	}
-
-	cout << find_max_parent(checkpoints, shortest, k) << endl;
+	cout << find_max_parent(checkpoints, shortest, k) << '\n';
+	
 	return 0;
 }
