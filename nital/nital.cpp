@@ -3,48 +3,43 @@
 #include <vector>
 #include <algorithm>
 
-
 using namespace std;
-
 
 struct Edge
 {
     char begin;
     char end;
 
-    Edge() { this->begin = ' '; this->end = ' '; }
-
-    Edge(const char& begin,const char& end) {
-        this->begin = begin;
-        this->end = end;
+    Edge() : begin(' '), end(' ') 
+    { 
     }
 
-    void operator = (const Edge& edge) {
+    Edge(char begin_, char end_) : begin(begin_), end(end_) 
+    {
+    }
+
+    void operator = (Edge edge) {
         this->begin = edge.begin;
         this->end = edge.end;
     }
 
-    bool operator == (const Edge& edge) {
+    bool operator == (Edge edge) {
         return ((this->begin == edge.begin) && (this->end == edge.end));
     }
 };
 
-void vectorReverse(vector <int>& v) {
-    for (size_t i = 0; i < (v.size() / 2); ++i)
-        swap(v[i], v[v.size() - 1 - i]);
-}
 
-void pushChar(vector<char>& vector, string word)    {
+void pushChar(vector<char>& v, const string& word)    {
     for (size_t k = 0; k < word.length(); ++k)  {
         char ch = word[k];
         bool flag = false;
-        for (size_t j = 0; j < vector.size(); ++j)
-            if (ch == vector[j])    {
+        for (size_t j = 0; j < v.size(); ++j)
+            if (ch == v[j])    {
                 flag = true;
                 break;
             }
         if (!flag)
-            vector.push_back(ch);
+            v.push_back(ch);
     }
 }
 
@@ -71,7 +66,7 @@ void pushEdges(vector<Edge>& edges, const vector<string>& words)   {
     }
 }
 
-void matrixFilling(vector <vector <int> >& g, const vector<char>& alph,
+void matrixFilling(vector <vector<int>>& g, const vector<char>& alph,
     const vector<Edge>& edges)  {
     for (size_t i = 0; i < edges.size(); ++i)   {
         Edge edge = edges[i];
@@ -125,7 +120,7 @@ void topologicalSort(const vector <vector <int> >& g)   {
         if (!visited[v])
             dfs(v, g);
     }
-    vectorReverse(ans);
+    reverse(ans.begin(), ans.end());
 }
 
 
