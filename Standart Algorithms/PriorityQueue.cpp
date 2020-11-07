@@ -2,7 +2,6 @@
 #include <string>
 #include <vector>
 
-
 using namespace std;
 
 enum class HeapType {
@@ -109,5 +108,6 @@ int main(int argc, char* argv[]) {
             cout<<heap.extractMax()<<'\n';
         }
     }
+    
     return 0;
 }
