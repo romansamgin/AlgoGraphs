@@ -37,6 +37,7 @@ string Huffman(const string& s){
     vector<pair<string,char>> l;
     while (pqueue.size() > 1){
         sort(pqueue.begin(), pqueue.end(), comp);  
+        
         string sun1_s = pqueue.front().first;
         int sun1_w = pqueue.front().second;
         l.push_back({sun1_s,'0'});
@@ -47,33 +48,27 @@ string Huffman(const string& s){
         l.push_back({sun2_s,'1'});
         pqueue.pop_front();
         
-
         pair<string, int> parent = {sun2_s + sun1_s, sun1_w + sun2_w};
         pqueue.push_back(parent);
     }
-
-
     reverse(l.begin(), l.end());
-
     for(auto p : l){
         string str = p.first;
         char bit = p.second;
-        for(auto symbol : str){
+        for(char symbol : str){
             scodes[symbol] += bit;
         }
     }
     string result;
-    for(auto ch : s){
+    for(char ch : s){
         result += scodes[ch];
     }
     cout<<scodes.size()<<" "<<result.size()<<endl;
     for(auto p : scodes){        
         cout<<p.first<<": "<<p.second<<endl;
     }
-
     return result;
 }
-
 
 int main(int argc, char* argv[]) {  
     string input;
