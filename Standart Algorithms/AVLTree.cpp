@@ -7,6 +7,7 @@ int max(int a, int b) {
     return a > b ? a : b;
 }
 
+//по хорошему - добавить шаблонность, функции разрезания/склеивания поддеревьев
 class BST {
 private:
     struct Node {
@@ -58,7 +59,8 @@ private:
             showR(s->right);
         }     
     }
-
+    
+    //заменить pair на структуру с понятными именами полей 
     pair<Node*, Node*> find_with_parent(int key) const {
         Node* cur = head;
         Node* parrent = nullptr;
