@@ -2,27 +2,21 @@
 #include <vector>
 #include <algorithm> 
 
-#define MAXN 1000
-#define INF 2147483647
-
 using namespace std;
+const int MAXN = 1000;
+const int INF = numeric_limits<int>::max();
 
 template <typename T>
 void print(const vector<T>& v) {
 	for (size_t i = 0; i < v.size(); ++i)
 		cout << v[i] << " ";
-	cout << endl;
-}
-
-void vectorReverse(vector <int>& v) {
-	for (size_t i = 0; i < (v.size() / 2); ++i)
-		swap(v[i], v[v.size() - 1 - i]);
+	cout << '\n';
 }
 
 vector<int> ans{};
 vector<int> visited{};
 
-void dfs(int u, const vector< vector<int> >& g) {
+void dfs(int u, const vector<vector<int>>& g) {
 	visited[u] = true;
 	for (int v = 0; v < g.size(); v++)
 		if (g[u][v] != -INF) {
@@ -39,11 +33,10 @@ void topologicalSort(const vector< vector<int> >& g) {
 	for (int v = 0; v < g.size(); ++v)
 		if (!visited[v])
 			dfs(v, g);
-	vectorReverse(ans);
+	reverse(ans.begin(), ans.end());
 }
 
 int main() {
-
 	int n;
 	cin >> n;
 	vector< vector<int> > g(n, vector<int>(n));
