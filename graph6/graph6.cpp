@@ -69,8 +69,9 @@ int maxFlow(vector<vector<pair<int, int>>>& graph, int s, int t) {
 	for (int flow = 0; ;) {
 		vector<bool>visited(graph.size(), false);
 		int df = findPath(graph, visited, s, t, INF);
-		if (df == 0)
+		if (df == 0) {
 			return flow;
+		}			
 		flow += df;
 	}
 }
