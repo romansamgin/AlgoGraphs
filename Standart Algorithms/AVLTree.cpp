@@ -2,7 +2,6 @@
 
 using namespace std;
 
-
 int max(int a, int b) {
     return a > b ? a : b;
 }
@@ -86,13 +85,17 @@ private:
     void insertR(Node*& s, int key) {
         if (!s) {
             s = new Node(key);
+            N++;
             return;
         }
         else if (key < s->key) {
             insertR(s->left, key);
         }
-        else {
+        else if (key > s->key) {
            insertR(s->right, key);
+        }
+        else {
+            return;
         }
         balance(s);
     }
@@ -298,11 +301,7 @@ public:
 
 
     void insert (int key) {
-        if (find(key) != nullptr) {
-            return;
-        }
         insertR(head, key);
-        N++;
     }
 
 
@@ -381,5 +380,3 @@ int main() {
 
     return 0;
 }
-
-
