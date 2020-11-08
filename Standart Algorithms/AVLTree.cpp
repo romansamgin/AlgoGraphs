@@ -34,7 +34,6 @@ private:
         s->height = max(height(s->left), height(s->right)) + 1;
     }
 
-
     void new_sum(Node*& s) {
         long long left = 0, right = 0;
         if (s->left) {
@@ -158,7 +157,6 @@ private:
         return sum;
     }
 
-
     //Наименьший общий предок
     Node* LCA(int l, int r) const {
         Node* lca = head;
@@ -173,8 +171,6 @@ private:
         return lca;
     }
 
-
-
     void removemin(Node*& s) {
         if (!(s->left)) {
             s = s->right;
@@ -183,7 +179,6 @@ private:
         removemin(s->left);
         balance(s);
     }
-
 
     void removeR(Node*& s, int key) {
         if (!s) {
@@ -214,7 +209,6 @@ private:
         balance(s);
     }
 
-
     //малый левый поворот - высота правого поддерева больше на 2
     //height_diff(s) = 2
     void rotateL(Node*& s) {
@@ -228,7 +222,6 @@ private:
         s = x;       
     }
 
-
     //малый правый поворот - высота левого поддерева больше на 2
     //height_diff(s) = -2
     void rotateR(Node*& s) {
@@ -241,8 +234,7 @@ private:
         new_sum(x);
         s = x;
     }
-    
- 
+     
     void balance(Node*& s) {
         new_height(s);
         new_sum(s);
@@ -269,8 +261,7 @@ private:
     }
 
     Node* head;
-
-    int N = 0;
+    size_t N = 0;
 
 public:
 
@@ -281,34 +272,27 @@ public:
         N = 1;
     }
 
-
     Node* get_root() const {
         return head;
     }
-
 
     void show() const {
         showR(head);
         cout << endl;
     }
 
-
-
     Node* find(int key) const {
         auto res = find_with_parent(key);
         return res.first;
     }
 
-
     void insert (int key) {
         insertR(head, key);
     }
 
-
     void remove(int key) {
         removeR(head, key);
-    }
-   
+    }  
 
     long long sum(int l, int r) const {
         long long res = 0;
@@ -322,8 +306,7 @@ public:
         return res;
     }
 
-
-    int size() const {
+    size_t size() const {
         return N;
     }
 };
