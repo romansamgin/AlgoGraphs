@@ -18,11 +18,6 @@ struct Edge
     {
     }
 
-    void operator = (Edge edge) {
-        this->begin = edge.begin;
-        this->end = edge.end;
-    }
-
     bool operator == (Edge edge) {
         return ((this->begin == edge.begin) && (this->end == edge.end));
     }
