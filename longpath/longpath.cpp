@@ -26,7 +26,7 @@ void dfs(int u, const vector<vector<int>>& g) {
 	ans.push_back(u);
 }
 
-void topologicalSort(const vector< vector<int> >& g) {
+void topologicalSort(const vector<vector<int>>& g) {
 	visited.resize(g.size());
 	for (size_t i = 0; i < visited.size(); ++i)
 		visited[i] = false;
