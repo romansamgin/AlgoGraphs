@@ -42,17 +42,17 @@ int main() {
 	vector< vector<int> > g(n, vector<int>(n));
 	vector<int>cost(n);
 
-	for (int i = 0; i < n; ++i)
+	for (int i = 0; i < n; ++i) {
 		cin >> cost[i];
-
-	for (int i = 0; i < n; ++i)
+	}
+	
+	for (int i = 0; i < n; ++i) {
 		for (int j = 0; j < n; ++j) {
 			cin >> g[i][j];
 			g[i][j] == 0 ? g[i][j] = -INF : g[i][j] = cost[i];
 		}
-
+	}
 	topologicalSort(g);
-
 	//solve
 	for (int i = 0; i < n; ++i)
 		for (int k = i + 1; k < n; ++k)
@@ -61,11 +61,11 @@ int main() {
 					if (g[ans[k]][ans[j]] != -INF)
 						g[ans[i]][ans[j]] = max(g[ans[i]][ans[j]],
 							g[ans[i]][ans[k]] + g[ans[k]][ans[j]]);
-
+	
 	for (int i = 0; i < n; ++i)
 		for (int j = 0; j < n; ++j)
 			g[i][j] != -INF ? g[i][j] += cost[j] : g[i][j] = 0;
-
+	
 	for (const auto& v : g)
 		print(v);
 
